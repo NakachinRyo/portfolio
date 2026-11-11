@@ -1,124 +1,227 @@
+/* 全体初期化と基本設定 */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    margin: 0;
-    color: #202a35;
-    background: #f7f8fa;
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.7;
+    color: #2c3e50;
+    background-color: #f4f7f6;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    padding: 1rem max(6vw, 1.25rem);
-    background: #fff;
-}
-
-.logo {
-    font-weight: 700;
-}
-
-nav ul,
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav a {
-    color: inherit;
+a {
+    color: #0066cc;
     text-decoration: none;
 }
 
-nav a:hover {
-    color: #3467c2;
+a:hover {
+    text-decoration: underline;
 }
 
+/* ヘッダー */
+header {
+    background-color: #1e293b;
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+/* ヒーローセクション */
 .hero {
-    padding: 7rem 1.5rem;
-    color: #fff;
-    background: linear-gradient(135deg, #263d66, #4d76b8);
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: #ffffff;
     text-align: center;
+    padding: 50px 20px;
 }
 
 .hero h1 {
-    margin: 0;
-    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    margin-bottom: 0;
+    font-size: 1.1rem;
+    color: #94a3b8;
 }
 
+/* セクション設定 */
 .section {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .section h2 {
-    margin-top: 0;
+    font-size: 1.5rem;
+    color: #0f172a;
+    border-left: 5px solid #0284c7;
+    padding-left: 12px;
+    margin-bottom: 20px;
 }
 
-.grid {
+.section-intro {
+    margin-bottom: 20px;
+    color: #64748b;
+}
+
+/* カードスタイル */
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    color: #1e293b;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 8px;
+}
+
+.card h4 {
+    font-size: 1.05rem;
+    color: #334155;
+    margin: 15px 0 8px 0;
+}
+
+/* プロフィール */
+.profile-card ul {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.profile-card li {
+    margin-bottom: 8px;
+}
+
+/* 補足ボックス */
+.link-box, .role-box, .description-box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 15px;
+}
+
+/* 画像ギャラリー (4枚グリッド) */
+.image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.25rem;
+    gap: 15px;
+    margin-top: 15px;
 }
 
-.card {
+.image-item {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
     overflow: hidden;
-    border-radius: 0.75rem;
-    background: #fff;
-    box-shadow: 0 4px 18px rgb(22 35 55 / 8%);
-}
-
-.card h3,
-.card p {
-    margin: 1rem;
-}
-
-.card-img {
-    min-height: 130px;
-    background: linear-gradient(135deg, #dce5f2, #bccce3);
-}
-
-.skills-list li {
-    padding: 0.4rem 0.8rem;
-    border-radius: 999px;
-    background: #e7edf7;
-}
-
-footer {
-    padding: 1.5rem;
-    color: #fff;
-    background: #202a35;
     text-align: center;
 }
 
-footer p {
-    margin: 0;
+.image-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    background-color: #cbd5e1;
 }
 
-@media (max-width: 600px) {
-    header {
-        align-items: flex-start;
-        flex-direction: column;
-    }
+.caption {
+    font-size: 0.85rem;
+    color: #475569;
+    padding: 8px 5px;
+    background-color: #ffffff;
+}
 
-    nav ul {
-        gap: 0.75rem;
+/* スキルテーブル */
+.skill-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.skill-table th, .skill-table td {
+    border: 1px solid #e2e8f0;
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.skill-table th {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-weight: 600;
+}
+
+.skill-table td strong {
+    color: #0f172a;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #1e293b;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-top: 60px;
+}
+
+/* レスポンシブ調整（スマホ対応） */
+@media (max-width: 640px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .skill-table th, .skill-table td {
+        display: block;
+        width: 100%;
+    }
+    .skill-table tr {
+        margin-bottom: 15px;
+        display: block;
+        border-bottom: 2px solid #cbd5e1;
     }
 }
